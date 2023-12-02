@@ -1,0 +1,118 @@
+theia@theiadocker-aniketkeshri:/home/project$ chmod +x backup.sh
+theia@theiadocker-aniketkeshri:/home/project$ ls -l backup.sh
+-rwxr-xr-x 1 theia users 1405 Nov 30 21:38 backup.sh
+theia@theiadocker-aniketkeshri:/home/project$ ./backup.sh
+backup.sh target_directory_name destination_directory_name
+theia@theiadocker-aniketkeshri:/home/project$ wget https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Final%20Project/important-documents.zip
+--2023-11-30 21:41:56--  https://cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud/IBM-LX0117EN-SkillsNetwork/labs/Final%20Project/important-documents.zip
+Resolving cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)... 169.63.118.104, 169.63.118.104
+Connecting to cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud (cf-courses-data.s3.us.cloud-object-storage.appdomain.cloud)|169.63.118.104|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 4995 (4.9K) [application/zip]
+Saving to: ‘important-documents.zip’
+
+important-documents.zip 100%[===============================>]   4.88K  --.-KB/s    in 0s      
+
+2023-11-30 21:41:56 (502 MB/s) - ‘important-documents.zip’ saved [4995/4995]
+
+theia@theiadocker-aniketkeshri:/home/project$ unzip -DDo important-documents.zip
+Archive:  important-documents.zip
+   creating: important-documents/
+  inflating: important-documents/zop.txt  
+  inflating: important-documents/ana.txt  
+  inflating: important-documents/doi.txt  
+theia@theiadocker-aniketkeshri:/home/project$ touch important-documents/*
+theia@theiadocker-aniketkeshri:/home/project$ ./backup.sh important-documents .
+Target Directory: important-documents
+Destination Directory: .
+ana.txt
+doi.txt
+zop.txt
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'   backup.sh   important-documents   important-documents.zip
+theia@theiadocker-aniketkeshri:/home/project$ # [TASK 17]
+theia@theiadocker-aniketkeshri:/home/project$ sudo cp backup.sh /usr/local/bin/
+theia@theiadocker-aniketkeshri:/home/project$ # [TASK 17]
+theia@theiadocker-aniketkeshri:/home/project$ sudo cp backup.sh /usr/local/bin/
+theia@theiadocker-aniketkeshri:/home/project$ sudo cp backup.sh /usr/local/bin/
+theia@theiadocker-aniketkeshri:/home/project$ */1 * * * * /usr/local/bin/backup.sh /home/project/important-documents /home/project
+bash: */1: No such file or directory
+theia@theiadocker-aniketkeshri:/home/project$ crontab -e
+no crontab for theia - using an empty one
+crontab: installing new crontab
+theia@theiadocker-aniketkeshri:/home/project$ sudo service cron start
+ * Starting periodic command scheduler cron
+   ...done.
+theia@theiadocker-aniketkeshri:/home/project$ crontab -e
+crontab: installing new crontab
+theia@theiadocker-aniketkeshri:/home/project$ crontab -e
+crontab: installing new crontab
+theia@theiadocker-aniketkeshri:/home/project$ sudo service cron start
+ * Starting periodic command scheduler cron
+   ...done.
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'   backup.sh             important-documents.zip
+'backup-[1701399001].tar.gz'   important-documents
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'   backup.sh             important-documents.zip
+'backup-[1701399001].tar.gz'   important-documents
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'   backup.sh             important-documents.zip
+'backup-[1701399001].tar.gz'   important-documents
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'   backup.sh             important-documents.zip
+'backup-[1701399001].tar.gz'   important-documents
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'   backup.sh             important-documents.zip
+'backup-[1701399001].tar.gz'   important-documents
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'   backup.sh             important-documents.zip
+'backup-[1701399001].tar.gz'   important-documents
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'   backup.sh             important-documents.zip
+'backup-[1701399001].tar.gz'   important-documents
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'   backup.sh             important-documents.zip
+'backup-[1701399001].tar.gz'   important-documents
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'   backup.sh             important-documents.zip
+'backup-[1701399001].tar.gz'   important-documents
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'   backup.sh             important-documents.zip
+'backup-[1701399001].tar.gz'   important-documents
+theia@theiadocker-aniketkeshri:/home/project$ ls
+'backup-[1701398547].tar.gz'  'backup-[1701399061].tar.gz'   important-documents
+'backup-[1701399001].tar.gz'   backup.sh                     important-documents.zip
+theia@theiadocker-aniketkeshri:/home/project$ sudo service cron stop
+ * Stopping periodic command scheduler cron
+   ...done.
+theia@theiadocker-aniketkeshri:/home/project$ crontab -e
+crontab: installing new crontab
+theia@theiadocker-aniketkeshri:/home/project$ crontab -l
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+0 0 * * * /usr/local/bin/backup.sh important-documents /home/project
+
+
+
+theia@theiadocker-aniketkeshri:/home/project$ 
