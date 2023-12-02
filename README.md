@@ -15,6 +15,7 @@ step4: Update the file’s last-modified date to now:
        This should have created a file called backup-[CURRENT_TIMESTAMP].tar.gz in your current directory.
 step5: Copy the backup.sh script into the /usr/local/bin/ directory:
        sudo cp backup.sh /usr/local/bin/
+       
 step6: Using crontab, schedule your /usr/local/bin/backup.sh script to backup the important-documents folder every 24 hours to the directory /home/project:
        crontab -e
        crontab -l
